@@ -13,10 +13,24 @@ const App = () => {
     setTodos(todos.filter(todo=>todo.id !== item.id))
   }
 
+  const updateTodo = (item,title) => {
+    const getExisitngTodos = [...todos]
+    getExisitngTodos.map(todo=>{
+      if(todo.id === item.id) {
+        todo.text = title
+      }
+      else {
+        return todo
+      }
+      return todo
+    })
+    setTodos(getExisitngTodos)
+  }
+
   return (
     <div>
       <Todoform addNewTodo={addHandler}/>
-      <Todolist todos={todos} delTodo={deleteTodo}/>
+      <Todolist todos={todos} delTodo={deleteTodo} updTodo={updateTodo}/>
     </div>
   )
 }
