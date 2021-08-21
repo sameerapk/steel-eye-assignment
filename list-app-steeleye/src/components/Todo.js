@@ -20,7 +20,7 @@ const Todo = ({item,delTodo,updTodo,textClicked}) => {
     }
 
     return (
-        <h1>
+        <h1 style={{marginBottom: '10px'}}>
            {!isInEditMode && (
                <div className='list-container'>
                <span style={{backgroundColor: item.clicked ? 'green' : 'red'}} onClick={()=>textClicked(item)}>
