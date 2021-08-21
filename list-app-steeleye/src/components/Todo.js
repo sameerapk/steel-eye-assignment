@@ -33,7 +33,7 @@ const Todo = ({item,delTodo,updTodo,textClicked}) => {
                </div>
            ) }
            {isInEditMode && 
-           <input type='text' value={title} onChange={handleTitleChange} className='todo-input'/>
+           <input type='text' value={title} onChange={handleTitleChange} className='todo-input edit'/>
            }
            {isInEditMode && <button onClick={cancelEdit} className='todo-button'>Cancel</button>} 
            {isInEditMode && <button className='todo-button' onClick={()=>{updTodo(item, title);setIsInEditMode(false)}}>Update todo</button>} 
