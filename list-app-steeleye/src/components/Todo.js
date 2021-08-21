@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Todo = ({item,delTodo,updTodo}) => {
+const Todo = ({item,delTodo,updTodo,textClicked}) => {
     const [isInEditMode, setIsInEditMode] = useState(false)
     const [title,setTitle] = useState('')
 
@@ -19,7 +19,11 @@ const Todo = ({item,delTodo,updTodo}) => {
 
     return (
         <h1>
-            {!isInEditMode && item.text}
+            {!isInEditMode && 
+            <span style={{backgroundColor: item.clicked ? 'green' : 'red'}} onClick={()=>textClicked(item)}>
+            {item.text}
+            </span> 
+            }
            {!isInEditMode && <button onClick={()=>delTodo(item)}>Delete todo</button>}
            {!isInEditMode && <button onClick={changeMode}>Edit todo</button>}
            {isInEditMode && 
