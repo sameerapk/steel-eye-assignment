@@ -6,5 +6,5 @@ Tech stack: React hooks, javascript(ES6), HTML, CSS, react-icons(npm package)
 Features of the project
 1.CRUD operations like add,edit,delete and updation of the todos performed. 
 2.Nice looking todos with reasonable css
-3.Todos initialy displayed with red background. When clicked on individual todos, background of the clicked todo changes to green.
+3.background modification of the todos when clicked on them individually .
 4.Todos saved onto localstorage with custom hook .
