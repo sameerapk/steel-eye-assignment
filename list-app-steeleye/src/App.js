@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Todoform from './components/Todoform'
 import Todolist from './components/Todolist'
 import './App.css'
+import useLocalStorage from './hooks/useLocalStorage'
 
 const App = () => {
-  const [todos,setTodos] = useState([
+  const [todos,setTodos] = useLocalStorage('todosList',[
     {
       id:Math.floor(Math.random() * 1000000),
       text: 'Learn React'
