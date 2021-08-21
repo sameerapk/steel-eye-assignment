@@ -1,6 +1,8 @@
 # steel-eye-assignment
 This project mainy contains daily tasks that are added to the list 
 
+Live demo of the project : https://sameera-todoapp-hooks.netlify.app/
+
 Tech stack: React hooks, javascript(ES6), HTML, CSS, react-icons(npm package)
 
 Features of the project
