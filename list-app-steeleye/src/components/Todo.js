@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { RiCloseCircleLine } from 'react-icons/ri';
+import { TiEdit } from 'react-icons/ti';
 
 const Todo = ({item,delTodo,updTodo,textClicked}) => {
     const [isInEditMode, setIsInEditMode] = useState(false)
@@ -19,18 +21,22 @@ const Todo = ({item,delTodo,updTodo,textClicked}) => {
 
     return (
         <h1>
-            {!isInEditMode && 
-            <span style={{backgroundColor: item.clicked ? 'green' : 'red'}} onClick={()=>textClicked(item)}>
-            {item.text}
-            </span> 
-            }
-           {!isInEditMode && <button onClick={()=>delTodo(item)}>Delete todo</button>}
-           {!isInEditMode && <button onClick={changeMode}>Edit todo</button>}
+           {!isInEditMode && (
+               <div className='list-container'>
+               <span style={{backgroundColor: item.clicked ? 'green' : 'red'}} onClick={()=>textClicked(item)}>
+               {item.text}
+               </span>
+               <div className='icons'>
+                   <RiCloseCircleLine onClick={()=>delTodo(item)} className='delete-icon'/>
+                   <TiEdit onClick={changeMode} className='edit-icon' />
+               </div>
+               </div>
+           ) }
            {isInEditMode && 
-           <input type='text' value={title} onChange={handleTitleChange} />
+           <input type='text' value={title} onChange={handleTitleChange} className='todo-input'/>
            }
-           {isInEditMode && <button onClick={cancelEdit}>Cancel</button>} 
-           {isInEditMode && <button onClick={()=>{updTodo(item, title);setIsInEditMode(false)}}>Update todo</button>} 
+           {isInEditMode && <button onClick={cancelEdit} className='todo-button'>Cancel</button>} 
+           {isInEditMode && <button className='todo-button' onClick={()=>{updTodo(item, title);setIsInEditMode(false)}}>Update todo</button>} 
         </h1>
     )
 }

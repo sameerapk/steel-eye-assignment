@@ -9,14 +9,15 @@ const Todoform = (props) => {
         setText('')
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='todo-form'>
           <input 
           type='text'
             name='todoAdd'
             value={text}
             onChange={(e) => setText(e.target.value)}
+            className='todo-input'
             />
-            <button>Add todo</button>
+            <button className='todo-button'>Add todo</button>
         </form>
     )
 }
